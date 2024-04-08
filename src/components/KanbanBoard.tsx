@@ -54,7 +54,7 @@ function KanbanBoard({ boards, onUpdateTitle }) {
   //     'Content-Type': 'application/json'
   //   };
 
-  //   fetch("http://localhost:5000/get_boards", {
+  //   fetch("http://52.70.104.77/get_boards", {
   //     method: 'GET',
   //     headers: headers
   //   })
@@ -92,7 +92,7 @@ function KanbanBoard({ boards, onUpdateTitle }) {
       'Content-Type': 'application/json'
     };
 
-    fetch(`http://localhost:5000/update_board`, {
+    fetch(`http://52.70.104.77/update_board`, {
       method: "PUT",
       headers: headers,
       body: JSON.stringify({

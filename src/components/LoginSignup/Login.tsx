@@ -33,7 +33,7 @@ const Login: React.FC = () => {
     event.preventDefault();
 
     try {
-      const response = await fetch('http://localhost:5000/login', {
+      const response = await fetch('http://52.70.104.77/login', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',

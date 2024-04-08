@@ -41,7 +41,7 @@ const Signup: React.FC = () => {
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    
+
     // Check if password and confirmPassword match
     if (formData.password !== formData.confirmPassword) {
       alert('Password and Confirm Password must match.');
@@ -49,7 +49,7 @@ const Signup: React.FC = () => {
     }
 
     try {
-      const response = await fetch('http://localhost:5000/signup', {
+      const response = await fetch('http://52.70.104.77/signup', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json'
@@ -64,7 +64,7 @@ const Signup: React.FC = () => {
       if (response.ok) {
         const data = await response.json();
         const token = data.token;
-        
+
         // Set token to localStorage
         localStorage.setItem('token', token);
 
