@@ -49,7 +49,7 @@ const Signup: React.FC = () => {
     }
 
     try {
-      const response = await fetch('http://52.70.104.77/signup', {
+      const response = await fetch('http://44.203.181.85/signup', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json'
