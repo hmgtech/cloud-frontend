@@ -1,0 +1,155 @@
+/* Navbar.css */
+.navbar {
+    padding: 10px 20px;
+}
+
+.navbar-container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.navbar-brand {
+    font-size: 1.5rem;
+}
+
+.navbar-toggle {
+    background: none;
+    border: none;
+    cursor: pointer;
+    font-size: 1.5rem;
+    color: #fff;
+}
+
+.navbar-links {
+    display: flex;
+    justify-content: flex-end;
+}
+
+.navbar-links button {
+    margin-left: 10px;
+    /* Add some space between buttons */
+}
+
+.invite-button {
+    background-color: #0077b6;
+    color: white;
+    border: none;
+    padding: 8px 12px;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.logout-button {
+    background-color: rgba(255, 166, 0, 0.726);
+    color: black;
+    border: none;
+    padding: 8px 12px;
+    border-radius: 4px;
+    cursor: pointer;
+    font-weight: bold;
+}
+
+/* Invite Popup Styles */
+.invite-popup {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: white;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    z-index: 999;
+    transition: opacity 0.3s ease, transform 0.3s ease;
+    width: 280px;
+    height: 220px;
+    color: black;
+}
+
+.backdrop {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 998;
+    transition: opacity 0.3s ease;
+}
+
+/* Navbar.css */
+.select-dropdown {
+    width: 100%;
+    padding: 8px;
+    font-size: 16px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    background-color: #fff;
+    outline: none;
+}
+
+.select-dropdown:focus {
+    border-color: #0077b6;
+    /* Change the border color when focused */
+    box-shadow: 0 0 5px rgba(0, 119, 182, 0.5);
+    /* Add a shadow when focused */
+}
+
+.invite-popup h3 {
+    margin-bottom: 10px;
+}
+
+.invite-popup input {
+    width: 100%;
+    padding: 8px;
+    margin-bottom: 10px;
+}
+
+.button-container {
+    display: flex;
+    justify-content: space-between;
+}
+
+.invite-popup button {
+    padding: 8px 12px;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.invite-submit {
+    background-color: #0077b6;
+    color: white;
+    border: none;
+}
+
+.invite-cancel {
+    background-color: #ccc;
+    color: black;
+    border: none;
+}
+
+/* Responsive styles */
+@media screen and (max-width: 768px) {
+    .navbar-links {
+        display: none;
+        flex-direction: column;
+        position: absolute;
+        top: 60px;
+        left: 0;
+        width: 50%;
+        background-color: #caf0f8;
+        padding: 10px 0;
+        border-radius: 8px;
+        /* Add border radius for mobile view */
+    }
+
+    .navbar-links.active {
+        display: flex;
+    }
+
+    .navbar-links button {
+        margin: 10px 0;
+        /* Add margin for mobile view */
+    }
+}
