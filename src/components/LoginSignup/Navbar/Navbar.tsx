@@ -30,7 +30,7 @@ const Navbar = ({ ownedBoards }) => {
         const fetchUserDetails = async () => {
             try {
                 const token = localStorage.getItem('token');
-                const response = await fetch('http://127.0.0.1:5000/get_user_details', {
+                const response = await fetch('http:// 3.89.195.15/get_user_details', {
                     method: 'GET',
                     headers: {
                         'Authorization': `Bearer ${token}`
@@ -93,7 +93,7 @@ const Navbar = ({ ownedBoards }) => {
             };
 
             // Send POST request with bearer token
-            const response = await fetch('http://127.0.0.1:5000/share_board', {
+            const response = await fetch('http:// 3.89.195.15/share_board', {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',
