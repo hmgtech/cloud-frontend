@@ -21,7 +21,7 @@ function App() {
       const token = localStorage.getItem('token');
       if (token) {
         try {
-          const response = await fetch('http://3.82.139.214/protected', {
+          const response = await fetch('http://127.0.0.1:5000/protected', {
             method: 'GET',
             headers: {
               'Authorization': `Bearer ${token}`
@@ -50,7 +50,7 @@ function App() {
 
   const fetchBoards = async (token) => {
     try {
-      const response = await fetch("http://3.82.139.214/get_boards", {
+      const response = await fetch("http://127.0.0.1:5000/get_boards", {
         method: 'GET',
         headers: {
           'Authorization': `Bearer ${token}`,
@@ -72,7 +72,7 @@ function App() {
     try {
       setIsAddingBoard(true);
       const token = localStorage.getItem('token');
-      const response = await fetch("http://3.82.139.214/add_board", {
+      const response = await fetch("http://127.0.0.1:5000/add_board", {
         method: 'POST',
         headers: {
           'Authorization': `Bearer ${token}`,
