@@ -33,7 +33,7 @@ const Login: React.FC = () => {
     event.preventDefault();
 
     try {
-      const response = await fetch('http://44.203.181.85/login', {
+      const response = await fetch('http://3.82.139.214/login', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
