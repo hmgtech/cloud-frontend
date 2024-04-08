@@ -14,6 +14,7 @@ const Login: React.FC = () => {
     borderRadius: '5px',
     padding: '8px',
     fontSize: '16px',
+    color: "black"
   };
 
   const buttonStyle: React.CSSProperties = {
@@ -30,7 +31,7 @@ const Login: React.FC = () => {
 
   const handleLogin = async (event: React.FormEvent) => {
     event.preventDefault();
-  
+
     try {
       const response = await fetch('http://localhost:5000/login', {
         method: 'POST',
@@ -42,12 +43,12 @@ const Login: React.FC = () => {
           password: password,
         }),
       });
-  
+
       if (!response.ok) {
         const errorData = await response.json();
         throw new Error(errorData.message);
       }
-  
+
       const data = await response.json();
       localStorage.setItem('token', data.token);
       // Redirect to dashboard page
@@ -59,7 +60,7 @@ const Login: React.FC = () => {
       // toast.error(error.message);
     }
   };
-  
+
 
   return (
     <>
