@@ -2,6 +2,7 @@ import { useState, useEffect } from 'react';
 import { useHistory } from 'react-router-dom';
 import { toast } from 'react-toastify';
 import './Navbar.css';
+import { BASE_URL } from "../../../../config.ts";
 
 const Navbar = ({ ownedBoards }) => {
     const [isOpen, setIsOpen] = useState(false);
@@ -30,7 +31,7 @@ const Navbar = ({ ownedBoards }) => {
         const fetchUserDetails = async () => {
             try {
                 const token = localStorage.getItem('token');
-                const response = await fetch('http://3.89.195.15/get_user_details', {
+                const response = await fetch(`${BASE_URL}/get_user_details`, {
                     method: 'GET',
                     headers: {
                         'Authorization': `Bearer ${token}`
@@ -93,7 +94,7 @@ const Navbar = ({ ownedBoards }) => {
             };
 
             // Send POST request with bearer token
-            const response = await fetch('http://3.89.195.15/share_board', {
+            const response = await fetch(`${BASE_URL}/share_board`, {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',

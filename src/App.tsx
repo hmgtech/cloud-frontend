@@ -5,6 +5,7 @@ import LoginSignupTabs from './components/LoginSignup/LoginSignUp';
 import Navbar from './components/LoginSignup/Navbar/Navbar';
 import 'react-toastify/dist/ReactToastify.css';
 import { ToastContainer } from 'react-toastify';
+import { BASE_URL } from "../config.ts";
 
 function App() {
   const [isLoggedIn, setIsLoggedIn] = useState(false);
@@ -21,7 +22,7 @@ function App() {
       const token = localStorage.getItem('token');
       if (token) {
         try {
-          const response = await fetch('http://3.89.195.15/protected', {
+          const response = await fetch(`${BASE_URL}/protected`, {
             method: 'GET',
             headers: {
               'Authorization': `Bearer ${token}`
@@ -50,7 +51,7 @@ function App() {
 
   const fetchBoards = async (token) => {
     try {
-      const response = await fetch("http://3.89.195.15/get_boards", {
+      const response = await fetch(`${BASE_URL}/get_boards`, {
         method: 'GET',
         headers: {
           'Authorization': `Bearer ${token}`,
@@ -72,7 +73,7 @@ function App() {
     try {
       setIsAddingBoard(true);
       const token = localStorage.getItem('token');
-      const response = await fetch("http://3.89.195.15/add_board", {
+      const response = await fetch(`${BASE_URL}/add_board`, {
         method: 'POST',
         headers: {
           'Authorization': `Bearer ${token}`,

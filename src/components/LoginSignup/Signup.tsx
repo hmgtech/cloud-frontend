@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { BASE_URL } from "../../../config.ts";
 
 const Signup: React.FC = () => {
   const [formData, setFormData] = useState({
@@ -49,7 +50,7 @@ const Signup: React.FC = () => {
     }
 
     try {
-      const response = await fetch('http://3.89.195.15/signup', {
+      const response = await fetch(`${BASE_URL}/signup`, {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json'

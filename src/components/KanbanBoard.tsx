@@ -2,6 +2,7 @@ import PlusIcon from "../icons/PlusIcon";
 import { useMemo, useState, useEffect } from "react";
 import { Board, Column, Id, Task } from "../types";
 import ColumnContainer from "./ColumnContainer";
+import { BASE_URL } from "../../config.ts";
 // import { Redirect } from 'react-router-dom'; // Add this line
 import {
   DndContext,
@@ -54,7 +55,7 @@ function KanbanBoard({ boards, onUpdateTitle }) {
   //     'Content-Type': 'application/json'
   //   };
 
-  //   fetch("http://3.89.195.15/get_boards", {
+  //   fetch("${BASE_URL}/get_boards", {
   //     method: 'GET',
   //     headers: headers
   //   })
@@ -92,7 +93,7 @@ function KanbanBoard({ boards, onUpdateTitle }) {
       'Content-Type': 'application/json'
     };
 
-    fetch(`http://3.89.195.15/update_board`, {
+    fetch(`${BASE_URL}/update_board`, {
       method: "PUT",
       headers: headers,
       body: JSON.stringify({

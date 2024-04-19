@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
-// import { toast, ToastContainer } from 'react-toastify';
-// import 'react-toastify/dist/ReactToastify.css';
+import { BASE_URL } from "../../../config.ts";
+import { toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 const Login: React.FC = () => {
   const [email, setEmail] = useState('');
@@ -33,7 +34,7 @@ const Login: React.FC = () => {
     event.preventDefault();
 
     try {
-      const response = await fetch('http://3.89.195.15/login', {
+      const response = await fetch(`${BASE_URL}/login`, {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
@@ -57,7 +58,7 @@ const Login: React.FC = () => {
       // Handle error here, for example:
       console.error(error.message);
       // Display an error message to the user
-      // toast.error(error.message);
+      toast.error(error.message);
     }
   };
 
